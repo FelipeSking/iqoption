@@ -1,5 +1,5 @@
 instrument{
-    name="Sup/Res",  -- Define o nome do instrumento como "Sup/Res"
+    name="MeuPrimeiroSUP/RES",  -- Define o nome do instrumento como "Sup/Res"
     icon='indicators:ADX',  -- Define um ícone (no caso, o indicador ADX) para o instrumento
     overlay=true  -- Define que esse indicador deve ser plotado sobre o gráfico de preços existente (overlay)
 }
