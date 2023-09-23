@@ -53,38 +53,34 @@ function Limpar() {
 }
 
 //--------------------Função para limpar o valor da entrada ou atualizar-----------------------
-function  atualizarvalorEntrada() {
-    document.getElementById('valorEntrada').textContent = `Valor da Entrada: ${valorEntrada}`;
-    
-   
+function atualizarvalorEntrada() {
+    // Atualizar o valor da entrada com base no gerenciamento e nas perdas
+    if (gerenciamento === "Conservador" && losses === 2) {
+        valorEntrada *= 1.2;
+    } else if (gerenciamento === "Moderado" && losses === 2) {
+        valorEntrada *= 1.5;
+    } else if (gerenciamento === "Agressivo" && losses === 2) {
+        valorEntrada *= 1.75;
+    } else if (gerenciamento === "Conservador" && losses === 3) {
+        valorEntrada *= 1.2;
+    } else if (gerenciamento === "Moderado" && losses === 3) {
+        valorEntrada *= 1.5;
+    } else if (gerenciamento === "Agressivo" && losses === 3) {
+        valorEntrada *= 1.75;
+    }
 
+    // Exibir o valor da entrada atualizado
+    document.getElementById('valorEntrada').textContent = `Valor da Entrada: ${valorEntrada.toFixed(2)}`;
 }
+
+
 //--------------------------PLACAR--------------------------------------------------------------
 // Função para atualizar o placar
 function atualizarPlacar() {
     document.getElementById('wins').textContent = `Wins: ${wins}`;
     document.getElementById('losses').textContent = `Losses: ${losses}`;
     document.getElementById('bancaAtual').textContent = `Valor da Banca: ${valorBanca.toFixed(2)}`;
-     // Atualizar o valor da entrada com base no gerenciamento
-     if (gerenciamento === "Conservador" && losses === 2) {
-        valorEntrada = valorEntrada * 1.2;
-         atualizarvalorEntrada();
-    } else if (gerenciamento === "Moderado" && losses === 2) {
-        valorEntrada = valorEntrada * 1.5;
-         atualizarvalorEntrada();
-    } else if (gerenciamento === "Agressivo" && losses === 2) {
-        valorEntrada = valorEntrada * 1.75;
-         atualizarvalorEntrada();
-    } else if (gerenciamento === "Conservador" && losses === 3) {
-        valorEntrada = perda * 1.2;
-         atualizarvalorEntrada();
-    } else if (gerenciamento === "Moderado" && losses === 3) {
-        valorEntrada = perda * 1.5;
-         atualizarvalorEntrada();
-    } else if (gerenciamento === "Agressivo" && losses === 3) {
-        valorEntrada = perda * 1.75;
-         atualizarvalorEntrada();
-}
+   
 }
 
 //--------------------------Adição de botões-----------------------------------------------
