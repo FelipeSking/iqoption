@@ -76,7 +76,7 @@ function  atualizarvalorEntrada() {
          atualizarvalorEntrada();
 }
 
-
+}
 //--------------------------PLACAR--------------------------------------------------------------
 // Função para atualizar o placar
 function atualizarPlacar() {
