@@ -1,5 +1,4 @@
-document.addEventListener('DOMContentLoaded', function () {
-  // Variáveis globais
+// Variáveis globais
 let banca = 0;
 let valorEntrada = 0;
 let payout = 0;
@@ -27,9 +26,9 @@ function calcularEntrada() {
 // Função para processar o clique no botão "Win"
 function win() {
     // Calcular lucro com base no payout
-    const lucroWin = valorEntrada * payout;
+    const lucroWin = valorEntrada * (payout / 100);
 
-    // Atualizar o lucro, banca e contador de Wins
+    // Atualizar lucro, banca e contador de Wins
     lucro += lucroWin;
     banca += lucroWin;
     wins++;
@@ -65,11 +64,11 @@ function loss() {
 
 // Função para atualizar o placar
 function atualizarPlacar() {
-    document.getElementById("wins").innerHTML = `Wins: ${wins}`;
-    document.getElementById("losses").innerHTML = `Losses: ${losses}`;
-    document.getElementById("bancaAtual").innerHTML = `Valor da Banca: ${banca.toFixed(2)}`;
-    document.getElementById("lucro").innerHTML = `Lucro: ${lucro.toFixed(2)}`;
-    document.getElementById("perda").innerHTML = `Perda: ${perda.toFixed(2)}`;
+    document.getElementById("wins").innerHTML = `${wins}`;
+    document.getElementById("losses").innerHTML = `${losses}`;
+    document.getElementById("bancaAtual").innerHTML = `${banca.toFixed(2)}`;
+    document.getElementById("lucro").innerHTML = `${lucro.toFixed(2)}`;
+    document.getElementById("perda").innerHTML = `${perda.toFixed(2)}`;
 }
 
 // Adicionar manipuladores de eventos aos botões
