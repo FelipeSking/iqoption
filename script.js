@@ -41,10 +41,16 @@ function loss() {
 // Função para lidar com um clique no botão "Limpar"
 function Limpar() {
     valorBanca = 0;
-    losses = 8;
+    losses = 0;
     wins = 0;
     valorEntrada = 0;
     atualizarPlacar();
+    atualizarvalorEntrada()
+}
+
+
+function  atualizarvalorEntrada() {
+    document.getElementById('valorEntrada').textContent = `valorEntrada: ${valorEntrada}`;
 }
 
 
