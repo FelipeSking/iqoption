@@ -19,6 +19,8 @@ document.addEventListener('DOMContentLoaded', function () {
     const winsDisplay = document.querySelector('#wins span');
     const lossesDisplay = document.querySelector('#losses span');
     const bancaAtualDisplay = document.querySelector('#bancaAtual span');
+    const lucroDisplay = document.querySelector('#lucro span');
+    const perdaDisplay = document.querySelector('#perda span');
 
     // Função para calcular o valor da entrada
     const calcularEntrada = () => {
@@ -33,6 +35,8 @@ document.addEventListener('DOMContentLoaded', function () {
         winsDisplay.textContent = wins;
         lossesDisplay.textContent = losses;
         bancaAtualDisplay.textContent = valorBanca.toFixed(2);
+        lucroDisplay.textContent = (valorBanca - perda - 100).toFixed(2); // Subtrai 100 para mostrar o lucro relativo ao valor inicial (100)
+        perdaDisplay.textContent = perda.toFixed(2);
     };
 
     // Função para atualizar a banca após um Win
@@ -91,6 +95,4 @@ document.addEventListener('DOMContentLoaded', function () {
 
     // Atualizar tipo de gerenciamento
     gerenciamentoInput.addEventListener('change', function () {
-        tipoGerenciamento = gerenciamentoInput.value;
-    });
-});
+        tipoGerenciamento = gerenciamentoInput
