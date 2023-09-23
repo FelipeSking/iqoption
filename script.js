@@ -5,6 +5,7 @@ let payout = 0;
 let valorEntrada = 0;
 let wins = 0;
 let losses = 0;
+let gerenciamento = "";
 
 // Função para calcular a entrada
 function calcularEntrada() {
@@ -48,9 +49,9 @@ function Limpar() {
     atualizarvalorEntrada()
 }
 
-
+//--------------------Função para limpar o valor da entrada ou atualizar-----------------------
 function  atualizarvalorEntrada() {
-    document.getElementById('valorEntrada').textContent = `valorEntrada: ${valorEntrada}`;
+    document.getElementById('valorEntrada').textContent = `Valor da Entrada: ${valorEntrada}`;
 }
 
 
