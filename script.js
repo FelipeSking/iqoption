@@ -70,4 +70,4 @@ function atualizarPlacar() {
 document.getElementById('calcularEntrada').addEventListener('click', calcularEntrada);
 document.getElementById('winButton').addEventListener('click', win);
 document.getElementById('lossButton').addEventListener('click', loss);
-document.getElementById('Limpar').addEventListener('click', Limpar);
+document.getElementById('LimparButton').addEventListener('click', Limpar);
