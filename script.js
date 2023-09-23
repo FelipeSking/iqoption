@@ -33,7 +33,29 @@ function win() {
 
 // Função para lidar com um clique no botão "Loss"------------------------------------------------------------
 function loss() {
-      // Atualizar o valor da entrada com base no gerenciamento
+     
+    valorBanca -= valorEntrada
+    losses++;
+    atualizarPlacar();
+    
+}
+    
+
+
+// Função para lidar com um clique no botão "Limpar"----------------------------------------------------
+function Limpar() {
+    valorBanca = 0;
+    losses = 0;
+    wins = 0;
+    valorEntrada = 0;
+    atualizarPlacar();
+    atualizarvalorEntrada();
+}
+
+//--------------------Função para limpar o valor da entrada ou atualizar-----------------------
+function  atualizarvalorEntrada() {
+    document.getElementById('valorEntrada').textContent = `Valor da Entrada: ${valorEntrada}`;
+     // Atualizar o valor da entrada com base no gerenciamento
     if (gerenciamento === "Conservador" && losses === 2) {
         valorEntrada = valorEntrada * 1.2;
          atualizarvalorEntrada();
@@ -52,28 +74,6 @@ function loss() {
     } else if (gerenciamento === "Agressivo" && losses === 3) {
         valorEntrada = perda * 1.75;
          atualizarvalorEntrada();
-    } else if (valorBanca -= valorEntrada){
-    losses++;
-    atualizarPlacar();
-    
-}
-    
-}
-
-
-// Função para lidar com um clique no botão "Limpar"----------------------------------------------------
-function Limpar() {
-    valorBanca = 0;
-    losses = 0;
-    wins = 0;
-    valorEntrada = 0;
-    atualizarPlacar();
-    atualizarvalorEntrada();
-}
-
-//--------------------Função para limpar o valor da entrada ou atualizar-----------------------
-function  atualizarvalorEntrada() {
-    document.getElementById('valorEntrada').textContent = `Valor da Entrada: ${valorEntrada}`;
 }
 
 
