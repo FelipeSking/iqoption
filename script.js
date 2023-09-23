@@ -59,4 +59,38 @@ document.addEventListener('DOMContentLoaded', function () {
             if (losses === 2) {
                 valorEntrada = (valorEntrada * 0.5) + valorEntrada;
             } else if (losses === 3) {
-                valorEntrada = (perda * 0
+                valorEntrada = (perda * 0.5) + perda;
+            }
+        } else if (tipoGerenciamento === 'Agressivo') {
+            if (losses === 2) {
+                valorEntrada = (valorEntrada * 0.75) + valorEntrada;
+            } else if (losses === 3) {
+                valorEntrada = (perda * 0.75) + perda;
+            }
+        }
+
+        atualizarPlacar();
+    };
+
+    // Manipular envio do formulário
+    form.addEventListener('submit', function (e) {
+        e.preventDefault();
+        calcularEntrada();
+        atualizarPlacar();
+    });
+
+    // Manipular clique no botão Win
+    winButton.addEventListener('click', function () {
+        win();
+    });
+
+    // Manipular clique no botão Loss
+    lossButton.addEventListener('click', function () {
+        loss();
+    });
+
+    // Atualizar tipo de gerenciamento
+    gerenciamentoInput.addEventListener('change', function () {
+        tipoGerenciamento = gerenciamentoInput.value;
+    });
+});
