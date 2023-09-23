@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculadora de Banca</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <!-- Título da página -->
+    <h1>Calculadora de Banca</h1>
+
+    <!-- Formulário para entrada de valores -->
+    <form id="entradaForm">
+        <!-- Campo de entrada para o valor da banca -->
+        <label for="banca">Valor da Banca:</label>
+        <input type="number" id="banca" step="0.01" required>
+        <br>
+
+        <!-- Campo de entrada para a porcentagem da entrada -->
+        <label for="porcentagem">Porcentagem de Entrada (%):</label>
+        <input type="number" id="porcentagem" step="0.01" required>
+        <br>
+
+        <!-- Campo de entrada para o payout em porcentagem -->
+        <label for="payout">Payout (%):</label>
+        <input type="number" id="payout" step="0.01" required>
+        <br>
+
+        <!-- Tipo de gerenciamento -->
+        <label for="gerenciamento">Tipo de Gerenciamento:</label>
+        <select id="gerenciamento">
+            <option value="Conservador">Conservador</option>
+            <option value="Moderado">Moderado</option>
+            <option value="Agressivo">Agressivo</option>
+        </select>
+        <br>
+
+        <!-- Botão para calcular entrada -->
+        <button type="submit">Calcular Entrada</button>
+    </form>
+
+    <!-- Placar de Wins, Losses e Valor da Banca -->
+    <div id="placar">
+        <div id="wins">Wins: <span>0</span></div>
+        <div id="losses">Losses: <span>0</span></div>
+        <div id="bancaAtual">Valor da Banca: <span>0.00</span></div>
+    </div>
+
+    <!-- Botões Win e Loss -->
+    <button id="winButton">Win</button>
+    <button id="lossButton">Loss</button>
+
+    <!-- Script JavaScript -->
+    <script src="script.js"></script>
+</body>
+</html>
