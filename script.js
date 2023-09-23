@@ -1,79 +1,79 @@
-// Elementos do formulário
-const bancaInput = document.getElementById("banca");
-const porcentagemInput = document.getElementById("porcentagem");
-const payoutInput = document.getElementById("payout");
-const gerenciamentoSelect = document.getElementById("gerenciamento");
-const calcularEntradaButton = document.getElementById("calcularEntrada");
-
-// Elemento de saída para o valor da entrada
-const valorEntradaOutput = document.getElementById("valorEntrada");
-
-// Elementos do placar
-const winsSpan = document.querySelector("#wins span");
-const lossesSpan = document.querySelector("#losses span");
-const bancaAtualSpan = document.querySelector("#bancaAtual span");
-const lucroSpan = document.querySelector("#lucro span");
-const perdaSpan = document.querySelector("#perda span");
-
-// Variáveis para acompanhar os valores
+document.addEventListener('DOMContentLoaded', function () {
+    // Variáveis para armazenar valores
+   // Variáveis globais
 let banca = 0;
 let valorEntrada = 0;
+let payout = 0;
+let gerenciamento = "";
 let wins = 0;
 let losses = 0;
+let lucro = 0;
+let perda = 0;
 
 // Função para calcular o valor da entrada
 function calcularEntrada() {
-    const valorBanca = parseFloat(bancaInput.value);
-    const porcentagemEntrada = parseFloat(porcentagemInput.value) / 100;
-    const payout = parseFloat(payoutInput.value) / 100;
+    // Obter os valores do formulário
+    banca = parseFloat(document.getElementById("banca").value);
+    const porcentagemEntrada = parseFloat(document.getElementById("porcentagem").value) / 100;
+    const payoutPorcentagem = parseFloat(document.getElementById("payout").value) / 100;
+    gerenciamento = document.getElementById("gerenciamento").value;
 
-    valorEntrada = valorBanca * porcentagemEntrada;
-    valorEntradaOutput.textContent = valorEntrada.toFixed(2);
+    // Calcular o valor da entrada
+    valorEntrada = banca * porcentagemEntrada;
+
+    // Atualizar o placar
+    document.getElementById("bancaAtual").innerHTML = `Valor da Banca: ${banca.toFixed(2)}`;
 }
 
-// Evento de clique no botão "Calcular Entrada"
-calcularEntradaButton.addEventListener("click", calcularEntrada);
+// Função para processar o clique no botão "Win"
+function win() {
+    // Calcular lucro com base no payout
+    const lucroWin = valorEntrada * (payout / 100);
 
-// Botão "Win"
-const winButton = document.getElementById("winButton");
-winButton.addEventListener("click", () => {
-    // Atualizar os valores
-    banca += valorEntrada * payout; // Calcular o novo valor da banca após um "Win"
-    wins++; // Incrementar o contador de Wins
-
-    // Atualizar o placar
-    winsSpan.textContent = wins;
-    bancaAtualSpan.textContent = banca.toFixed(2);
-    lucroSpan.textContent = (banca - 100).toFixed(2); // Supondo que a banca inicial seja 100
-
-    // Zerar o contador de Losses quando ocorre um Win
-    losses = 0;
-    lossesSpan.textContent = losses;
-    perdaSpan.textContent = "0.00";
-});
-
-// Botão "Loss"
-const lossButton = document.getElementById("lossButton");
-lossButton.addEventListener("click", () => {
-    // Atualizar os valores
-    banca -= valorEntrada; // Calcular o novo valor da banca após um "Loss"
-    losses++; // Incrementar o contador de Losses
+    // Atualizar lucro, banca e contador de Wins
+    lucro += lucroWin;
+    banca += lucroWin;
+    wins++;
 
     // Atualizar o placar
-    lossesSpan.textContent = losses;
-    bancaAtualSpan.textContent = banca.toFixed(2);
+    atualizarPlacar();
+}
 
-    // Atualizar a Perda de acordo com o Gerenciamento escolhido
-    const gerenciamento = gerenciamentoSelect.value;
+// Função para processar o clique no botão "Loss"
+function loss() {
+    // Atualizar perda e contador de Losses
+    perda += valorEntrada;
+    losses++;
+
+    // Atualizar o placar
+    atualizarPlacar();
+
+    // Atualizar o valor da entrada com base no gerenciamento
     if (gerenciamento === "Conservador" && losses === 2) {
-        valorEntrada += valorEntrada * 0.20;
+        valorEntrada = valorEntrada * 1.2;
     } else if (gerenciamento === "Moderado" && losses === 2) {
-        valorEntrada += valorEntrada * 0.50;
+        valorEntrada = valorEntrada * 1.5;
     } else if (gerenciamento === "Agressivo" && losses === 2) {
-        valorEntrada += valorEntrada * 0.75;
-    } else if (losses >= 3) {
-        valorEntrada += valorEntrada * 0.20; // Aumentar o valor da entrada após três Losses consecutivos
+        valorEntrada = valorEntrada * 1.75;
+    } else if (gerenciamento === "Conservador" && losses === 3) {
+        valorEntrada = perda * 1.2;
+    } else if (gerenciamento === "Moderado" && losses === 3) {
+        valorEntrada = perda * 1.5;
+    } else if (gerenciamento === "Agressivo" && losses === 3) {
+        valorEntrada = perda * 1.75;
     }
-    perdaSpan.textContent = (valorEntrada - 100).toFixed(2); // Supondo que a banca inicial seja 100
-});
+}
 
+// Função para atualizar o placar
+function atualizarPlacar() {
+    document.getElementById("wins").innerHTML = `${wins}`;
+    document.getElementById("losses").innerHTML = `${losses}`;
+    document.getElementById("bancaAtual").innerHTML = `${banca.toFixed(2)}`;
+    document.getElementById("lucro").innerHTML = `${lucro.toFixed(2)}`;
+    document.getElementById("perda").innerHTML = `${perda.toFixed(2)}`;
+}
+
+// Adicionar manipuladores de eventos aos botões
+document.getElementById("calcularEntrada").addEventListener("click", calcularEntrada);
+document.getElementById("winButton").addEventListener("click", win);
+document.getElementById("lossButton").addEventListener("click", loss);
