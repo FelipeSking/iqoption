@@ -33,10 +33,31 @@ function win() {
 
 // Função para lidar com um clique no botão "Loss"------------------------------------------------------------
 function loss() {
-    
-    valorBanca -= valorEntrada;
+      // Atualizar o valor da entrada com base no gerenciamento
+    if (gerenciamento === "Conservador" && losses === 2) {
+        valorEntrada = valorEntrada * 1.2;
+         atualizarvalorEntrada();
+    } else if (gerenciamento === "Moderado" && losses === 2) {
+        valorEntrada = valorEntrada * 1.5;
+         atualizarvalorEntrada();
+    } else if (gerenciamento === "Agressivo" && losses === 2) {
+        valorEntrada = valorEntrada * 1.75;
+         atualizarvalorEntrada();
+    } else if (gerenciamento === "Conservador" && losses === 3) {
+        valorEntrada = perda * 1.2;
+         atualizarvalorEntrada();
+    } else if (gerenciamento === "Moderado" && losses === 3) {
+        valorEntrada = perda * 1.5;
+         atualizarvalorEntrada();
+    } else if (gerenciamento === "Agressivo" && losses === 3) {
+        valorEntrada = perda * 1.75;
+         atualizarvalorEntrada();
+    } else if (valorBanca -= valorEntrada){
     losses++;
     atualizarPlacar();
+    
+}
+    
 }
 
 
@@ -47,7 +68,7 @@ function Limpar() {
     wins = 0;
     valorEntrada = 0;
     atualizarPlacar();
-    atualizarvalorEntrada()
+    atualizarvalorEntrada();
 }
 
 //--------------------Função para limpar o valor da entrada ou atualizar-----------------------
