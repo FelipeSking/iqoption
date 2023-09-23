@@ -37,8 +37,8 @@ function loss() {
     valorBanca -= valorEntrada
     losses++;
     atualizarPlacar();
-    
-}
+    atualizarvalorEntrada();
+    }
     
 
 
