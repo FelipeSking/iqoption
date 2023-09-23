@@ -55,8 +55,18 @@ function Limpar() {
 //--------------------Função para limpar o valor da entrada ou atualizar-----------------------
 function  atualizarvalorEntrada() {
     document.getElementById('valorEntrada').textContent = `Valor da Entrada: ${valorEntrada}`;
+    
+   
+
+}
+//--------------------------PLACAR--------------------------------------------------------------
+// Função para atualizar o placar
+function atualizarPlacar() {
+    document.getElementById('wins').textContent = `Wins: ${wins}`;
+    document.getElementById('losses').textContent = `Losses: ${losses}`;
+    document.getElementById('bancaAtual').textContent = `Valor da Banca: ${valorBanca.toFixed(2)}`;
      // Atualizar o valor da entrada com base no gerenciamento
-    if (gerenciamento === "Conservador" && losses === 2) {
+     if (gerenciamento === "Conservador" && losses === 2) {
         valorEntrada = valorEntrada * 1.2;
          atualizarvalorEntrada();
     } else if (gerenciamento === "Moderado" && losses === 2) {
@@ -75,14 +85,6 @@ function  atualizarvalorEntrada() {
         valorEntrada = perda * 1.75;
          atualizarvalorEntrada();
 }
-
-}
-//--------------------------PLACAR--------------------------------------------------------------
-// Função para atualizar o placar
-function atualizarPlacar() {
-    document.getElementById('wins').textContent = `Wins: ${wins}`;
-    document.getElementById('losses').textContent = `Losses: ${losses}`;
-    document.getElementById('bancaAtual').textContent = `Valor da Banca: ${valorBanca.toFixed(2)}`;
 }
 
 //--------------------------Adição de botões-----------------------------------------------
