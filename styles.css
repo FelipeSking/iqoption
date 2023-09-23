@@ -54,3 +54,10 @@ button {
     color: white;
     border: none;
 }
+
+
+#limparButton {
+    background-color: gray;
+    color: white;
+    border: none;
+}
