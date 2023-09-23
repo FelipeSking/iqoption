@@ -1,60 +1,56 @@
 body {
     font-family: Arial, sans-serif;
-    margin: 0;
-    padding: 0;
     text-align: center;
 }
 
 h1 {
-    background-color: #333;
-    color: #fff;
-    padding: 10px;
+    color: #333;
 }
 
-#input-container {
-    margin: 20px auto;
-    width: 80%;
-    display: flex;
-    justify-content: space-around;
-    align-items: center;
-    flex-wrap: wrap;
+form {
+    margin-bottom: 20px;
 }
 
-#input-container label, #input-container input, #input-container select, #input-container button {
-    margin: 5px;
+form label {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: bold;
+}
+
+form input[type="number"] {
+    width: 100%;
     padding: 5px;
+    margin-bottom: 10px;
 }
 
 #placar {
-    background-color: #f0f0f0;
-    border: 1px solid #ddd;
-    margin: 20px auto;
-    width: 80%;
+    background-color: #eee;
     padding: 10px;
-    display: flex;
-    justify-content: space-around;
-    align-items: center;
+    margin: 10px auto;
+    width: 300px;
+    border-radius: 5px;
 }
 
-#botoes {
-    margin: 20px auto;
-    width: 80%;
+#placar div {
+    margin-bottom: 5px;
+    font-weight: bold;
 }
 
-#winButton, #lossButton {
+button {
     padding: 10px 20px;
-    font-size: 18px;
+    font-size: 16px;
+    margin: 0 5px;
     cursor: pointer;
 }
 
 #winButton {
-    background-color: #4CAF50;
+    background-color: green;
     color: white;
     border: none;
 }
 
 #lossButton {
-    background-color: #f44336;
+    background-color: red;
     color: white;
     border: none;
 }
