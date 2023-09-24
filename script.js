@@ -48,8 +48,11 @@ function win() {
         valorEntrada = entradainicial;
     }
     atualizarPlacar();
+    atualizarvalorEntrada();
     atualizarnivelwin()
     atualizarnivelloss()
+ 
+    
 }
 
 // Função para lidar com um clique no botão "Loss"------------------------------------------------------------
@@ -108,7 +111,8 @@ function atualizarvalorEntrada() {
 
     else {
         // Exibir o valor da entrada atualizado
-        document.getElementById('valorEntrada').textContent = `Valor da Entrada: ${valorEntrada.toFixed(2)}`;
+        document.getElementById('valorEntrada').textContent = `Valor da Entrada: ${valorEntrada}`;
+        
     }
     
 }
