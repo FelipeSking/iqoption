@@ -20,10 +20,13 @@ function calcularEntrada() {
     // Calcular o valor da entrada
     valorEntrada = (valorBanca * (porcentagemEntrada / 100)).toFixed(2);
     entradainicial = valorEntrada;
-
     // Exibir o valor da entrada no local designado
     document.getElementById('valorEntrada').textContent = `Valor da Entrada: ${valorEntrada}`;
+
+    entradainicial = parseFloat(document.getElementById('entradainicial').value);
 }
+
+
 
 //--------------------------------------Botões------------------------------------------------------------------
 // Função para lidar com um clique no botão "Limpar"----------------------------------------------------
@@ -50,7 +53,7 @@ function win() {
     
     if (nivelwin == 2 ){
         nivelloss = 0;
-        valorEntrada = 0;
+        valorEntrada = entradainicial;
       }
     
     atualizarPlacar();
@@ -77,30 +80,18 @@ function loss() {
     atualizarnivelwin();
     atualizarnivelloss();
 
-    
     }
-    
-
-//--------Atualizar nivel win---------------------------------
+    //--------Atualizar nivel win---------------------------------
 function atualizarnivelwin() {
      document.getElementById('nivelwin').textContent = `Nivel win: ${nivelwin.toFixed(2)}`;
 
     
 }
-
-
-
-
 //------Atualizar nivel loss----------------------------------------
 
 function atualizarnivelloss() {
-    document.getElementById('nivelloss').textContent = `Nivel loss: ${nivelloss.toFixed(2)}`;
-
-    
+    document.getElementById('nivelloss').textContent = `Nivel loss: ${nivelloss.toFixed(2)}`;  
 }
-
-
-
 
 //--------------------Função para limpar o valor da entrada ou atualizar-----------------------
 function atualizarvalorEntrada() {
