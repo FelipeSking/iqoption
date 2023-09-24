@@ -54,6 +54,10 @@ function Limpar() {
 
 //--------------------Função para limpar o valor da entrada ou atualizar-----------------------
 function atualizarvalorEntrada() {
+
+     // Obter os valores do formulário
+    let gerenciamento = document.getElementById('gerenciamento').value;
+   
     // Atualizar o valor da entrada com base no gerenciamento e nas perdas
     if (gerenciamento === "Conservador" && losses === 2) {
         valorEntrada *= 1.2;
