@@ -6,6 +6,8 @@ let valorEntrada = 0;
 let wins = 0;
 let losses = 0;
 let gerenciamento = "";
+let nivelwin = 0;
+let nivelloss =0;
 
 // Função para calcular a entrada
 function calcularEntrada() {
@@ -22,26 +24,6 @@ function calcularEntrada() {
 }
 
 //--------------------------------------Botões------------------------------------------------------------------
-
-
-// Função para lidar com um clique no botão "Win"
-function win() {
-    valorBanca += (valorEntrada * (payout / 100));
-    wins++;
-    atualizarPlacar();
-}
-
-// Função para lidar com um clique no botão "Loss"------------------------------------------------------------
-function loss() {
-     
-    valorBanca -= valorEntrada
-    losses++;
-    atualizarPlacar();
-    atualizarvalorEntrada();
-    }
-    
-
-
 // Função para lidar com um clique no botão "Limpar"----------------------------------------------------
 function Limpar() {
     valorBanca = 0;
@@ -52,6 +34,64 @@ function Limpar() {
     atualizarvalorEntrada();
 }
 
+
+
+// Função para lidar com um clique no botão "Win"
+function win() {
+    valorBanca += (valorEntrada * (payout / 100));
+    wins++;
+    nivelwin++;
+    if (nivelwin == 2 ){
+        nivelloss = 0;
+
+
+    }
+    atualizarPlacar();
+    atualizarnivelwin()
+    atualizarnivelloss()
+}
+
+// Função para lidar com um clique no botão "Loss"------------------------------------------------------------
+function loss() {
+     
+    valorBanca -= valorEntrada
+    losses++;
+    nivelloss++;
+    nivelwin = 0;
+    
+    
+    atualizarPlacar();
+    atualizarvalorEntrada();
+    atualizarnivelwin()
+    atualizarnivelloss()
+
+    
+    }
+    
+
+//--------Atualizar nivel win---------------------------------
+function atualizarnivelwin() {
+
+ document.getElementById('nivelwin').textContent = `Nivel win: ${nivelwin.toFixed(2)}`;
+
+    
+}
+
+
+
+
+//------Atualizar nivel loss----------------------------------------
+
+function atualizarnivelloss() {
+ document.getElementById('nivelloss').textContent = `Nivel loss: ${nivelloss.toFixed(2)}`;
+
+
+    
+}
+
+
+
+
 //--------------------Função para limpar o valor da entrada ou atualizar-----------------------
 function atualizarvalorEntrada() {
 
@@ -59,23 +99,22 @@ function atualizarvalorEntrada() {
     let gerenciamento = document.getElementById('gerenciamento').value;
    
     // Atualizar o valor da entrada com base no gerenciamento e nas perdas
-    if (gerenciamento === "Conservador" && losses === 2) {
+    if (gerenciamento === "Conservador" && nivelloss > 1) {
         valorEntrada *= 1.2;
-    } else if (gerenciamento === "Moderado" && losses === 2) {
-        valorEntrada *= 1.5;
-    } else if (gerenciamento === "Agressivo" && losses === 2) {
-        valorEntrada *= 1.75;
-    } else if (gerenciamento === "Conservador" && losses === 3) {
-        valorEntrada *= 1.2;
-    } else if (gerenciamento === "Moderado" && losses === 3) {
-        valorEntrada *= 1.5;
-    } else if (gerenciamento === "Agressivo" && losses === 3) {
-        valorEntrada *= 1.75;
-    }
+    } 
 
     // Exibir o valor da entrada atualizado
     document.getElementById('valorEntrada').textContent = `Valor da Entrada: ${valorEntrada.toFixed(2)}`;
 }
+
+
+
+
+
+
+
+
+
 
 
 //--------------------------PLACAR--------------------------------------------------------------
