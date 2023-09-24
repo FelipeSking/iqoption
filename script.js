@@ -100,6 +100,11 @@ function atualizarvalorEntrada() {
     if (gerenciamento === "Conservador" || nivelloss > 1 || nivelwin >1) {
         valorEntrada *= 1.2;
     } 
+    else if {
+        valorEntrada = (valorBanca * (porcentagemEntrada / 100)).toFixed(2);
+
+        
+    }
 
     // Exibir o valor da entrada atualizado
     document.getElementById('valorEntrada').textContent = `Valor da Entrada: ${valorEntrada.toFixed(2)}`;
