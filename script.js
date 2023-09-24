@@ -32,8 +32,12 @@ function Limpar() {
     losses = 0;
     wins = 0;
     valorEntrada = 0;
+    nivelloss = 0; 
+    nivelwin = 0; 
     atualizarPlacar();
     atualizarvalorEntrada();
+    atualizarnivelwin();
+    atualizarnivelloss();
 }
 
 
@@ -46,10 +50,10 @@ function win() {
     
     if (nivelwin == 2 ){
         nivelloss = 0;
-      
-        
+        valorEntrada = 0;
       }
-     atualizarPlacar();
+    
+    atualizarPlacar();
     atualizarvalorEntrada();
     atualizarnivelwin();
     atualizarnivelloss();
@@ -61,7 +65,7 @@ function win() {
 // Função para lidar com um clique no botão "Loss"------------------------------------------------------------
 function loss() {
      
-    valorBanca -= valorEntrada
+    valorBanca -= valorEntrada;
     losses++;
     nivelloss++;
     nivelwin = 0;
@@ -108,11 +112,7 @@ function atualizarvalorEntrada() {
     if (gerenciamento === "Conservador" && nivelloss >= 1) {
         valorEntrada *= 1.2;
     }
-
-    else {
-          valorEntrada = entradainicial;
-
-    }
+    
  // Exibir o valor da entrada atualizado
     document.getElementById('valorEntrada').textContent = `Valor da Entrada: ${valorEntrada.toFixed(2)}`;
     
