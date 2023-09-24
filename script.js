@@ -49,9 +49,9 @@ function win() {
       }
     
     atualizarPlacar();
-    atualizarvalorEntrada();
     atualizarnivelwin();
     atualizarnivelloss();
+    atualizarvalorEntrada();
  
     
 }
