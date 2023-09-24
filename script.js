@@ -109,10 +109,10 @@ function atualizarvalorEntrada() {
     document.getElementById('valorEntrada').textContent = `Valor da Entrada: ${valorEntrada.toFixed(2)}`;
     } 
 
-    else if (gerenciamento === "Conservador" && nivelwin >= 2 ) {
-        valorEntrada = entradainicial.toFixed(2);
+    else if (gerenciamento === "Conservador" && nivelwin == 2 ) {
+        valorEntrada = (valorBanca * (porcentagemEntrada / 100)).toFixed(2);
          // Exibir o valor da entrada atualizado
-    document.getElementById('valorEntrada').textContent = `Valor da Entrada: ${entradainicial.toFixed(2)}`;
+    document.getElementById('valorEntrada').textContent = `Valor da Entrada: ${valorEntrada.toFixed(2)}`;
     } 
 
     
