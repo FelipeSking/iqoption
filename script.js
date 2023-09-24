@@ -38,9 +38,9 @@ function Limpar() {
     nivelloss = 0; 
     nivelwin = 0; 
     atualizarPlacar();
-    atualizarvalorEntrada();
     atualizarnivelwin();
     atualizarnivelloss();
+    atualizarvalorEntrada();
 }
 
 
@@ -56,9 +56,9 @@ function win() {
       }
     
     atualizarPlacar();
-    atualizarvalorEntrada();
     atualizarnivelwin();
     atualizarnivelloss();
+    atualizarvalorEntrada();
 
    
 }
