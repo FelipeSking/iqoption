@@ -8,6 +8,7 @@ let losses = 0;
 let gerenciamento = "";
 let nivelwin = 0;
 let nivelloss =0;
+let entradainicial = 0; 
 
 // Função para calcular a entrada
 function calcularEntrada() {
@@ -18,6 +19,7 @@ function calcularEntrada() {
 
     // Calcular o valor da entrada
     valorEntrada = (valorBanca * (porcentagemEntrada / 100)).toFixed(2);
+    entradainicial = valorEntrada;
 
     // Exibir o valor da entrada no local designado
     document.getElementById('valorEntrada').textContent = `Valor da Entrada: ${valorEntrada}`;
@@ -43,7 +45,7 @@ function win() {
     nivelwin++;
     if (nivelwin == 2 ){
         nivelloss = 0;
-        valorEntrada = (valorBanca * (porcentagemEntrada / 100)).toFixed(2);
+        valorEntrada = entradainicial;
     }
     atualizarPlacar();
     atualizarnivelwin()
