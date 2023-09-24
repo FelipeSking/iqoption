@@ -43,11 +43,14 @@ function win() {
     valorBanca += (valorEntrada * (payout / 100));
     wins++;
     nivelwin++;
+    
     if (nivelwin == 2 ){
         nivelloss = 0;
+        nivelwin++;
     }
     if ( nivelloss == 0){
         valorEntrada= entradainicial;
+        nivelwin++;
     }
     atualizarPlacar();
     atualizarvalorEntrada();
