@@ -109,7 +109,7 @@ function atualizarvalorEntrada() {
     document.getElementById('valorEntrada').textContent = `Valor da Entrada: ${valorEntrada.toFixed(2)}`;
     } 
 
-    if (gerenciamento === "Conservador" && nivelloss == 0 ) {
+    if (gerenciamento === "Conservador" && nivelwin > 2 ) {
         valorEntrada = entradainicial;
          // Exibir o valor da entrada atualizado
     document.getElementById('valorEntrada').textContent = `Valor da Entrada: ${valorEntrada.toFixed(2)}`;
