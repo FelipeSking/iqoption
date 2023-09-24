@@ -46,6 +46,9 @@ function win() {
     
      if (nivelwin % 2 == 0) {
         nivelloss = 0;
+    }
+
+     else if (gerenciamento === "Conservador" && nivelwin % 2 == 0) {
         valorEntrada = entradainicial;
     }
 
@@ -106,13 +109,10 @@ function atualizarvalorEntrada() {
     // Atualizar o valor da entrada com base no gerenciamento e nas perdas
     if (gerenciamento === "Conservador" && nivelloss >= 1) {
         valorEntrada *= 1.2;
-    } else if (gerenciamento === "Conservador" && nivelwin % 2 == 0) {
-        valorEntrada = (entradainicial).toFixed(2);
-    }
 
     // Exibir o valor da entrada atualizado
     document.getElementById('valorEntrada').textContent = `Valor da Entrada: ${valorEntrada.toFixed(2)}`;
-    
+    }
 }
 
 
