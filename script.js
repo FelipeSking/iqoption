@@ -107,7 +107,7 @@ function atualizarvalorEntrada() {
     if (gerenciamento === "Conservador" && nivelloss >= 1) {
         valorEntrada *= 1.2;
     } else if (gerenciamento === "Conservador" && nivelwin % 2 == 0) {
-        valorEntrada = entradainicial;
+        valorEntrada = (entradainicial).toFixed(2);
     }
 
     // Exibir o valor da entrada atualizado
