@@ -51,7 +51,7 @@ function win() {
     wins++;
     nivelwin++;
     
-    if (nivelwin = 2 ){
+    if (nivelwin == 2 ){
         nivelloss = 0;
       }
     
