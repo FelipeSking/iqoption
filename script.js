@@ -45,7 +45,7 @@ function win() {
     nivelwin++;
     if (nivelwin == 2 ){
         nivelloss = 0;
-        valorEntrada = entradainicial;
+
     }
     atualizarPlacar();
     atualizarvalorEntrada();
