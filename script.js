@@ -19,7 +19,7 @@ function calcularEntrada() {
 
     // Calcular o valor da entrada
     valorEntrada = (valorBanca * (porcentagemEntrada / 100)).toFixed(2);
-    entradainicial = valorEntrada;
+    entradainicial = valorEntrada.toFixed(2);
 
     // Exibir o valor da entrada no local designado
     document.getElementById('valorEntrada').textContent = `Valor da Entrada: ${valorEntrada}`;
@@ -109,8 +109,8 @@ function atualizarvalorEntrada() {
     document.getElementById('valorEntrada').textContent = `Valor da Entrada: ${valorEntrada.toFixed(2)}`;
     } 
 
-    else if (gerenciamento === "Conservador" && nivelwin > 2 ) {
-        valorEntrada = entradainicial;
+    else if (gerenciamento === "Conservador" && nivelwin >= 2 ) {
+        valorEntrada = entradainicial.toFixed(2);
          // Exibir o valor da entrada atualizado
     document.getElementById('valorEntrada').textContent = `Valor da Entrada: ${valorEntrada.toFixed(2)}`;
     } 
