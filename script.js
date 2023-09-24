@@ -51,7 +51,7 @@ function win() {
     wins++;
     nivelwin++;
     
-    if (nivelwin == 2 ){
+    if (nivelwin = 2 ){
         nivelloss = 0;
       }
     
@@ -60,8 +60,7 @@ function win() {
     atualizarnivelwin();
     atualizarnivelloss();
 
- 
-    
+   
 }
 
 // Função para lidar com um clique no botão "Loss"------------------------------------------------------------
