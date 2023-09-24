@@ -43,7 +43,7 @@ function win() {
     valorBanca += (valorEntrada * (payout / 100));
     wins++;
     nivelwin++;
-    if (nivelwin == 2 ){
+    if (nivelwin = 2 ){
         nivelloss = 0;
 
     }
