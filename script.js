@@ -44,10 +44,11 @@ function win() {
     wins++;
     nivelwin++;
     
-    if (nivelwin == 2 ){
+     if (nivelwin % 2 == 0) {
         nivelloss = 0;
-      }
-    
+        valorEntrada = entradainicial;
+    }
+
     atualizarPlacar();
     atualizarnivelwin();
     atualizarnivelloss();
@@ -103,18 +104,14 @@ function atualizarvalorEntrada() {
     let gerenciamento = document.getElementById('gerenciamento').value;
    
     // Atualizar o valor da entrada com base no gerenciamento e nas perdas
-    if (gerenciamento === "Conservador" && nivelloss >= 1 ) {
+    if (gerenciamento === "Conservador" && nivelloss >= 1) {
         valorEntrada *= 1.2;
-         // Exibir o valor da entrada atualizado
-    document.getElementById('valorEntrada').textContent = `Valor da Entrada: ${valorEntrada.toFixed(2)}`;
-    } 
+    } else if (gerenciamento === "Conservador" && nivelwin % 2 == 0) {
+        valorEntrada = entradainicial;
+    }
 
-    else if (gerenciamento === "Conservador" && nivelwin == 2 ) {
-        valorEntrada = (valorBanca * (porcentagemEntrada / 100)).toFixed(2);
-         // Exibir o valor da entrada atualizado
+    // Exibir o valor da entrada atualizado
     document.getElementById('valorEntrada').textContent = `Valor da Entrada: ${valorEntrada.toFixed(2)}`;
-    } 
-
     
 }
 
