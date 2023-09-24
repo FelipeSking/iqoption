@@ -19,7 +19,7 @@ function calcularEntrada() {
 
     // Calcular o valor da entrada
     valorEntrada = (valorBanca * (porcentagemEntrada / 100)).toFixed(2);
-    entradainicial = valorEntrada.toFixed(2);
+    entradainicial = valorEntrada;
 
     // Exibir o valor da entrada no local designado
     document.getElementById('valorEntrada').textContent = `Valor da Entrada: ${valorEntrada}`;
