@@ -108,6 +108,7 @@ function atualizarvalorEntrada() {
     } 
 
     else {
+         valorEntrada= entradainicial;
         // Exibir o valor da entrada atualizado    
    document.getElementById('valorEntrada').textContent = `Valor da Entrada: ${valorEntrada.toFixed(2)}`;
         
