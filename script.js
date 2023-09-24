@@ -51,7 +51,7 @@ function win() {
      else if (gerenciamento === "Conservador" && nivelwin % 2 == 0) {
         valorEntrada = entradainicial;
     }
-
+ document.getElementById('valorEntrada').textContent = `Valor da Entrada: ${valorEntrada.toFixed(2)}`;
     atualizarPlacar();
     atualizarnivelwin();
     atualizarnivelloss();
