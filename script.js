@@ -43,8 +43,6 @@ function win() {
     nivelwin++;
     if (nivelwin == 2 ){
         nivelloss = 0;
-
-
     }
     atualizarPlacar();
     atualizarnivelwin()
@@ -99,7 +97,7 @@ function atualizarvalorEntrada() {
     let gerenciamento = document.getElementById('gerenciamento').value;
    
     // Atualizar o valor da entrada com base no gerenciamento e nas perdas
-    if (gerenciamento === "Conservador" && nivelloss > 1) {
+    if (gerenciamento === "Conservador" || nivelloss > 1 || nivelwin >1) {
         valorEntrada *= 1.2;
     } 
 
