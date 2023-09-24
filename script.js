@@ -44,14 +44,9 @@ function win() {
     wins++;
     nivelwin++;
     
-     if (nivelwin % 2 == 0) {
+    if (nivelwin == 2 ){
         nivelloss = 0;
-    }
-
-     else if (gerenciamento === "Conservador" && nivelwin % 2 == 0) {
-        valorEntrada = entradainicial;
-    }
- document.getElementById('valorEntrada').textContent = `Valor da Entrada: ${valorEntrada.toFixed(2)}`;
+      }
     atualizarPlacar();
     atualizarnivelwin();
     atualizarnivelloss();
