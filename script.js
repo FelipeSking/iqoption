@@ -106,14 +106,9 @@ function atualizarvalorEntrada() {
     document.getElementById('valorEntrada').textContent = `Valor da Entrada: ${valorEntrada.toFixed(2)}`;
     } 
 
-    else if{
-    
-      
-
-        
-
-    // Exibir o valor da entrada atualizado
-    document.getElementById('valorEntrada').textContent = `Valor da Entrada: ${valorEntrada.toFixed(2)}`;
+    else {
+        // Exibir o valor da entrada atualizado
+        document.getElementById('valorEntrada').textContent = `Valor da Entrada: ${valorEntrada.toFixed(2)}`;
     }
     
 }
