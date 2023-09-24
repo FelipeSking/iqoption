@@ -49,8 +49,8 @@ function win() {
     }
     atualizarPlacar();
     atualizarvalorEntrada();
-    atualizarnivelwin()
-    atualizarnivelloss()
+    atualizarnivelwin();
+    atualizarnivelloss();
  
     
 }
@@ -66,8 +66,8 @@ function loss() {
     
     atualizarPlacar();
     atualizarvalorEntrada();
-    atualizarnivelwin()
-    atualizarnivelloss()
+    atualizarnivelwin();
+    atualizarnivelloss();
 
     
     }
@@ -75,8 +75,7 @@ function loss() {
 
 //--------Atualizar nivel win---------------------------------
 function atualizarnivelwin() {
-
- document.getElementById('nivelwin').textContent = `Nivel win: ${nivelwin.toFixed(2)}`;
+     document.getElementById('nivelwin').textContent = `Nivel win: ${nivelwin.toFixed(2)}`;
 
     
 }
@@ -87,8 +86,7 @@ function atualizarnivelwin() {
 //------Atualizar nivel loss----------------------------------------
 
 function atualizarnivelloss() {
- document.getElementById('nivelloss').textContent = `Nivel loss: ${nivelloss.toFixed(2)}`;
-
+    document.getElementById('nivelloss').textContent = `Nivel loss: ${nivelloss.toFixed(2)}`;
 
     
 }
@@ -103,15 +101,15 @@ function atualizarvalorEntrada() {
     let gerenciamento = document.getElementById('gerenciamento').value;
    
     // Atualizar o valor da entrada com base no gerenciamento e nas perdas
-    if (gerenciamento === "Conservador" || nivelloss > = 1 ) {
+    if (gerenciamento === "Conservador" || nivelloss >= 1 ) {
         valorEntrada *= 1.2;
          // Exibir o valor da entrada atualizado
     document.getElementById('valorEntrada').textContent = `Valor da Entrada: ${valorEntrada.toFixed(2)}`;
     } 
 
     else {
-        // Exibir o valor da entrada atualizado
-        document.getElementById('valorEntrada').textContent = `Valor da Entrada: ${valorEntrada}`;
+        // Exibir o valor da entrada atualizado    
+   document.getElementById('valorEntrada').textContent = `Valor da Entrada: ${valorEntrada.toFixed(2)}`;
         
     }
     
