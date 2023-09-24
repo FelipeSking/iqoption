@@ -45,7 +45,9 @@ function win() {
     nivelwin++;
     if (nivelwin = 2 ){
         nivelloss = 0;
-
+    }
+    if ( nivelloss = 0){
+        valorEntrada= entradainicial;
     }
     atualizarPlacar();
     atualizarvalorEntrada();
@@ -62,6 +64,7 @@ function loss() {
     losses++;
     nivelloss++;
     nivelwin = 0;
+
     
     
     atualizarPlacar();
@@ -108,7 +111,7 @@ function atualizarvalorEntrada() {
     } 
 
     else {
-         valorEntrada= entradainicial;
+        
         // Exibir o valor da entrada atualizado    
    document.getElementById('valorEntrada').textContent = `Valor da Entrada: ${valorEntrada.toFixed(2)}`;
         
