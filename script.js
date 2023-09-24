@@ -46,6 +46,7 @@ function win() {
     
     if (nivelwin == 2 ){
         nivelloss = 0;
+        
       }
     atualizarPlacar();
     atualizarnivelwin();
@@ -104,10 +105,10 @@ function atualizarvalorEntrada() {
     // Atualizar o valor da entrada com base no gerenciamento e nas perdas
     if (gerenciamento === "Conservador" && nivelloss >= 1) {
         valorEntrada *= 1.2;
-
-    // Exibir o valor da entrada atualizado
-    document.getElementById('valorEntrada').textContent = `Valor da Entrada: ${valorEntrada.toFixed(2)}`;
     }
+ // Exibir o valor da entrada atualizado
+    document.getElementById('valorEntrada').textContent = `Valor da Entrada: ${valorEntrada.toFixed(2)}`;
+    
 }
 
 
