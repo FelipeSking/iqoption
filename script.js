@@ -98,7 +98,10 @@ function atualizarvalorEntrada() {
     let gerenciamento = document.getElementById('gerenciamento').value;
    
     // Atualizar o valor da entrada com base no gerenciamento e nas perdas
-    if (gerenciamento === "Conservador" && nivelloss >= 1) {
+    if (nivelwin == 2){
+        valorEntrada = entradainicial;
+    }
+    else if (gerenciamento === "Conservador" && nivelloss >= 1) {
         valorEntrada *= 1.2;
     }
     
