@@ -11,7 +11,9 @@ let nivelloss =0;
 let entradainicial = 0; 
 
 // Multiplicadores de valor de entrada para cada nível de Loss
-const multiplicadoresEntrada = [1, 1.2, 1.2, 1.5, 1.5, 1.75, 1.75, 2, 2, 2];
+const multiplicadoresEntrada1 = [1, 1.2, 1.2, 1.3, 1.3, 1.4, 1.4, 1.5, 1.5, 1.6];
+const multiplicadoresEntrada2 = [1, 1, 1, 1, 1, 1, 1.75, 2, 2, 2];
+const multiplicadoresEntrada3 = [2, 2, 2, 2, 1.5, 1.75, 1.75, 2, 2, 2];
 
 
 
@@ -105,7 +107,11 @@ function atualizarvalorEntrada() {
     // Atualizar o valor da entrada com base no gerenciamento e nas perdas
   if (gerenciamento === 'Conservador' && nivelloss >= 1) {
     valorEntrada *= multiplicadoresEntrada[nivelloss];
-  } else {
+  } if (gerenciamento === 'Moderado' && nivelloss >= 1) {
+    valorEntrada *= multiplicadoresEntrada2[nivelloss];
+  }if (gerenciamento === 'Agressivo' && nivelloss >= 1) {
+    valorEntrada *= multiplicadoresEntrada3[nivelloss];
+  }else {
     valorEntrada = +entradainicial;
   }
     
