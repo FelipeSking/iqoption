@@ -12,7 +12,7 @@ let entradainicial = 0;
 
 // Multiplicadores de valor de entrada para cada nível de Loss
 const multiplicadoresEntrada1 = [1, 1.2, 1.2, 1.3, 1.3, 1.4, 1.4, 1.5, 1.5, 1.6];
-const multiplicadoresEntrada2 = [1, 1, 1, 1, 1, 1, 1.75, 2, 2, 2];
+const multiplicadoresEntrada2 = [1, 2, 1, 2, 1, 1, 1.75, 2, 2, 2];
 const multiplicadoresEntrada3 = [2, 2, 2, 2, 1.5, 1.75, 1.75, 2, 2, 2];
 
 
