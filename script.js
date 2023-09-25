@@ -59,6 +59,8 @@ function win() {
     
     if (nivelwin == 2 ){
         nivelloss = 0;
+    valorEntrada = +entradainicial;
+  }
       }
     
     atualizarPlacar();
@@ -107,9 +109,7 @@ function atualizarvalorEntrada() {
     
   if (gerenciamento === 'Conservador' && nivelloss < multiplicadoresEntrada.length) {
     valorEntrada *= multiplicadoresEntrada[nivelloss];
-  } else {
-    valorEntrada = +entradainicial;
-  }
+  } 
 
     
  // Exibir o valor da entrada atualizado
