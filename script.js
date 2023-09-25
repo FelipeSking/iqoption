@@ -10,6 +10,11 @@ let nivelwin = 0;
 let nivelloss =0;
 let entradainicial = 0; 
 
+// Multiplicadores de valor de entrada para cada nível de Loss
+const multiplicadoresEntrada = [1, 1.2, 1.2, 1.5, 1.5, 1.75, 1.75, 2, 2, 2];
+
+
+
 // Função para calcular a entrada
 function calcularEntrada() {
     // Obter os valores do formulário
@@ -99,7 +104,7 @@ function atualizarvalorEntrada() {
    
     // Atualizar o valor da entrada com base no gerenciamento e nas perdas
   if (gerenciamento === 'Conservador' && nivelloss >= 1) {
-    valorEntrada *= 1.2;
+    valorEntrada *= multiplicadoresEntrada[nivelloss];
   } else {
     valorEntrada = +entradainicial;
   }
