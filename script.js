@@ -110,7 +110,7 @@ function atualizarvalorEntrada() {
 
         valorEntrada = +entradainicial;
     }
-  else (gerenciamento === 'Conservador' && nivelloss < multiplicadoresEntrada.length) {
+  else if (gerenciamento === 'Conservador' && nivelloss < multiplicadoresEntrada.length) {
     valorEntrada *= multiplicadoresEntrada[nivelloss];
   } 
 
