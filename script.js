@@ -106,13 +106,13 @@ function atualizarvalorEntrada() {
     let gerenciamento = document.getElementById('gerenciamento').value;
    
     // Atualizar o valor da entrada com base no gerenciamento e nas perdas
-    if (gerenciamento === 'Conservador' &&  nivelwin == 0){
-
-        valorEntrada = +entradainicial;
-    }
-  else if (gerenciamento === 'Conservador' && nivelloss < multiplicadoresEntrada.length) {
+   
+  if (gerenciamento === 'Conservador' && nivelloss < multiplicadoresEntrada.length) {
     valorEntrada *= multiplicadoresEntrada[nivelloss];
-  } 
+  
+     } else {
+    valorEntrada = +entradainicial;
+  }
 
     
  // Exibir o valor da entrada atualizado
