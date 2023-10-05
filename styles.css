@@ -1,63 +1,119 @@
+/* Centralizar conteúdo */
 body {
-    font-family: Arial, sans-serif;
-    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    margin: 0;
+    border: 2px solid #333; /* Borda do formulário */
+    padding: 20px; /* Espaçamento interno do formulário */
+    border-radius: 10px; /* Cantos arredondados */
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2); /* Sombra */
 }
 
-h1 {
-    color: #333;
+/* Estilo do formulário */
+#entradaForm {
+    text-align: center; /* Centraliza o texto dentro do formulário */
+    border: 2px solid #333; /* Borda do formulário */
+    padding: 20px; /* Espaçamento interno do formulário */
+    border-radius: 10px; /* Cantos arredondados */
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2); /* Sombra */
+    max-width: 300px; /* Largura máxima do formulário */
 }
 
-form {
-    margin-bottom: 20px;
-}
-
-form label {
+/* Estilo para os rótulos e campos de entrada dentro do formulário */
+label,
+input,
+select {
     display: block;
-    margin-bottom: 5px;
-    font-weight: bold;
+    margin-bottom: 10px; /* Espaçamento inferior entre elementos */
+    width: 100%; /* Ocupa toda a largura disponível */
 }
 
-form input[type="number"] {
-    width: 100%;
-    padding: 5px;
-    margin-bottom: 10px;
-}
-
-#placar {
-    background-color: #eee;
-    padding: 10px;
-    margin: 10px auto;
-    width: 300px;
-    border-radius: 5px;
-}
-
-#placar div {
-    margin-bottom: 5px;
-    font-weight: bold;
-}
-
-button {
-    padding: 10px 20px;
+/* Estilizar botões */
+#calcularEntrada {
+    background-color: #007bff; /* Cor de fundo para "Calcular Entrada" (azul) */
+    color: white; /* Cor do texto */
+    border: none; /* Remove a borda padrão */
+    padding: 8px 16px; /* Espaçamento interno reduzido para diminuir o tamanho */
+    border-radius: 5px; /* Cantos arredondados */
+    cursor: pointer; /* Ícone de cursor de clique */
+    transition: background-color 0.3s; /* Efeito de transição na cor de fundo */
     font-size: 16px;
-    margin: 0 5px;
-    cursor: pointer;
 }
 
+
+/* Estilizar botões */
+
+#winButton,
+#lossButton,
+#Limpar {
+    display: float;
+    margin-right: 5px;
+
+}
+/* Estilizar botões */
 #winButton {
-    background-color: green;
-    color: white;
-    border: none;
+    background-color: #00b309; /* Cor de fundo para "Win" (verde) */
+    color: white; /* Cor do texto */
+    border: none; /* Remove a borda padrão */
+    padding: 8px 16px; /* Espaçamento interno reduzido para diminuir o tamanho */
+    border-radius: 5px; /* Cantos arredondados */
+    cursor: pointer; /* Ícone de cursor de clique */
+    transition: background-color 0.3s; /* Efeito de transição na cor de fundo */
+    font-size: 16px;
+    margin-right: 5px; /* Margem à direita para separar do próximo botão */
 }
 
 #lossButton {
-    background-color: red;
-    color: white;
-    border: none;
+    background-color: red; /* Cor de fundo para "Loss" (vermelho) */
+    color: white; /* Cor do texto */
+    border: none; /* Remove a borda padrão */
+    padding: 8px 16px; /* Espaçamento interno reduzido para diminuir o tamanho */
+    border-radius: 5px; /* Cantos arredondados */
+    cursor: pointer; /* Ícone de cursor de clique */
+    transition: background-color 0.3s; /* Efeito de transição na cor de fundo */
+    font-size: 16px;
+    margin-right: 5px; /* Margem à direita para separar do próximo botão */
 }
 
+#Limpar {
+    background-color: rgb(0, 17, 255); /* Cor de fundo para "Limpar" (azul) */
+    color: white; /* Cor do texto */
+    border: none; /* Remove a borda padrão */
+    padding: 8px 16px; /* Espaçamento interno reduzido para diminuir o tamanho */
+    border-radius: 5px; /* Cantos arredondados */
+    cursor: pointer; /* Ícone de cursor de clique */
+    transition: background-color 0.3s; /* Efeito de transição na cor de fundo */
+    font-size: 16px;
+}
 
-#LimparButton {
-    background-color: gray;
+/* Estilo para o placar e outras informações */
+#placar {
+    text-align: center;
+    margin-top: 20px; /* Espaçamento superior do placar */
+}
+
+/* Estilo para a saída do valor da entrada e outras informações */
+#valorEntrada,
+#wins,
+#losses,
+#bancaAtual,
+#lucro {
+    font-weight: bold; /* Texto em negrito */
+}
+
+/* Estilo para o resultado lucro/perda */
+#lucro {
+    color: green; /* Cor do texto para lucro (verde) */
+}
+
+#lucro.negativo {
+    color: red; /* Cor do texto para perda (vermelho) */
+}
+
+#nivelwin,
+#nivelloss{
     color: white;
-    border: none;
 }
