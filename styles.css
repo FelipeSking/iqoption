@@ -15,6 +15,7 @@ body {
 
 /* Estilo do formulário */
 #entradaForm {
+    background-color: white;
     text-align: center; /* Centraliza o texto dentro do formulário */
     border: 2px solid #333; /* Borda do formulário */
     padding: 20px; /* Espaçamento interno do formulário */
