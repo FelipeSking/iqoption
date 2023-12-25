@@ -33,6 +33,87 @@ select {
     width: 100%; /* Ocupa toda a largura disponível */
 }
 
+
+
+@media (max-width: 768px) {
+    /* Defina o flex-wrap para que os botões sejam empilhados verticalmente */
+    .home-sci {
+        flex-wrap: wrap;
+        display:inline-flex;
+
+     
+    }
+
+    /* Ajuste o espaçamento entre os botões */
+    .home-sci a {
+        margin: 5px; /* Adicione margens para separar os botões */
+        
+    }
+ }
+
+
+/* botões de rede social--------------------------------*/
+.home-sci {
+   margin-right: 3%;
+   position: flex;
+   display: flex;
+   align-items:normal;
+   bottom: 40px;
+   width: 170px;
+   justify-content: space-between;
+   
+}
+/*Animação dos botões de rede social--------------------------------*/
+
+.home-sci::before {
+     content: '';
+     position: absolute;
+     top: 0;
+     right: 0;
+     width: 100%;
+     height: 100%;
+     background: #081b29;
+     animation: showRight 1s ease forwards;
+     animation-delay: .2.5s;
+     z-index: 2;
+}
+   
+    
+.home-sci a {
+   position: absolite;
+   display: flex;
+   justify-content: center;
+   align-items: center;
+   width: 40px;
+   height: 40px;
+   background: transparent;
+   border: 2px solid #00abf0;
+   border-radius: 50%;
+   font-size: 20px;
+   color:#00abf0;
+   text-decoration: none;
+   z-index:1;
+   overflow: hidden;
+   transition: .5s;
+}
+
+.home-sci a: hover  {
+    color: #081b29;
+
+}
+
+ .home-sci a: :before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: #00abf0;
+    z-index: -1;
+    transition: .5s;
+     
+ }
 /* Estilizar botões */
 #calcularEntrada {
     background-color: #007bff; /* Cor de fundo para "Calcular Entrada" (azul) */
