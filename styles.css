@@ -1,4 +1,4 @@
-/* Centralizar conteúdo */
+
 body {
     background-color: white;
     display: flex;
@@ -7,115 +7,125 @@ body {
     justify-content: center;
     height: 100vh;
     margin: 0;
-    border: 2px solid #333; /* Borda do formulário */
-    padding: 20px; /* Espaçamento interno do formulário */
-    border-radius: 10px; /* Cantos arredondados */
-    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2); /* Sombra */
+    border: 2px solid #333;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
 }
 
-/* Estilo do formulário */
 #entradaForm {
     background-color: white;
-    text-align: center; /* Centraliza o texto dentro do formulário */
-    border: 2px solid #333; /* Borda do formulário */
-    padding: 20px; /* Espaçamento interno do formulário */
-    border-radius: 10px; /* Cantos arredondados */
-    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2); /* Sombra */
-    max-width: 300px; /* Largura máxima do formulário */
+    text-align: center;
+    border: 2px solid #333;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
+    max-width: 300px;
 }
 
-/* Estilo para os rótulos e campos de entrada dentro do formulário */
 label,
 input,
 select {
     display: block;
-    margin-bottom: 10px; /* Espaçamento inferior entre elementos */
-    width: 100%; /* Ocupa toda a largura disponível */
+    margin-bottom: 10px;
+    width: 100%;
 }
 
-/* Estilizar botões */
 #calcularEntrada {
-    background-color: #007bff; /* Cor de fundo para "Calcular Entrada" (azul) */
-    color: white; /* Cor do texto */
-    border: none; /* Remove a borda padrão */
-    padding: 8px 16px; /* Espaçamento interno reduzido para diminuir o tamanho */
-    border-radius: 5px; /* Cantos arredondados */
-    cursor: pointer; /* Ícone de cursor de clique */
-    transition: background-color 0.3s; /* Efeito de transição na cor de fundo */
+    background-color: #007bff;
+    color: white;
+    border: none;
+    padding: 8px 16px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
     font-size: 16px;
 }
-
-
-/* Estilizar botões */
 
 #winButton,
 #lossButton,
 #Limpar {
     display: float;
     margin-right: 5px;
-
 }
-/* Estilizar botões */
+
 #winButton {
-    background-color: #00b309; /* Cor de fundo para "Win" (verde) */
-    color: white; /* Cor do texto */
-    border: none; /* Remove a borda padrão */
-    padding: 8px 16px; /* Espaçamento interno reduzido para diminuir o tamanho */
-    border-radius: 5px; /* Cantos arredondados */
-    cursor: pointer; /* Ícone de cursor de clique */
-    transition: background-color 0.3s; /* Efeito de transição na cor de fundo */
+    background-color: #00b309;
+    color: white;
+    border: none;
+    padding: 8px 16px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
     font-size: 16px;
-    margin-right: 5px; /* Margem à direita para separar do próximo botão */
+    margin-right: 5px;
 }
 
 #lossButton {
-    background-color: red; /* Cor de fundo para "Loss" (vermelho) */
-    color: white; /* Cor do texto */
-    border: none; /* Remove a borda padrão */
-    padding: 8px 16px; /* Espaçamento interno reduzido para diminuir o tamanho */
-    border-radius: 5px; /* Cantos arredondados */
-    cursor: pointer; /* Ícone de cursor de clique */
-    transition: background-color 0.3s; /* Efeito de transição na cor de fundo */
+    background-color: red;
+    color: white;
+    border: none;
+    padding: 8px 16px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
     font-size: 16px;
-    margin-right: 5px; /* Margem à direita para separar do próximo botão */
+    margin-right: 5px;
 }
 
 #Limpar {
-    background-color: rgb(0, 17, 255); /* Cor de fundo para "Limpar" (azul) */
-    color: white; /* Cor do texto */
-    border: none; /* Remove a borda padrão */
-    padding: 8px 16px; /* Espaçamento interno reduzido para diminuir o tamanho */
-    border-radius: 5px; /* Cantos arredondados */
-    cursor: pointer; /* Ícone de cursor de clique */
-    transition: background-color 0.3s; /* Efeito de transição na cor de fundo */
+    background-color: rgb(0, 17, 255);
+    color: white;
+    border: none;
+    padding: 8px 16px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
     font-size: 16px;
 }
 
-/* Estilo para o placar e outras informações */
 #placar {
     text-align: center;
-    margin-top: 20px; /* Espaçamento superior do placar */
+    margin-top: 20px;
 }
 
-/* Estilo para a saída do valor da entrada e outras informações */
 #valorEntrada,
 #wins,
 #losses,
 #bancaAtual,
 #lucro {
-    font-weight: bold; /* Texto em negrito */
+    font-weight: bold;
 }
 
-/* Estilo para o resultado lucro/perda */
 #lucro {
-    color: green; /* Cor do texto para lucro (verde) */
+    color: green;
 }
 
 #lucro.negativo {
-    color: red; /* Cor do texto para perda (vermelho) */
+    color: red;
 }
 
 #nivelwin,
 #nivelloss{
     color: white;
+}
+
+
+.redes ul {
+    display: flex;
+   
+    color:transparent;
+
+}
+
+.redes ul a {
+     display: block;
+     pedding: 10px;
+
+}
+
+
+.redes ul li img {
+    max-width: 40px;
+
 }
