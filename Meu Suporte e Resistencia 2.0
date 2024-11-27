@@ -1,0 +1,92 @@
+instrument {
+    name = "MeuPrimeiroSUP/RES",  -- Define o nome do instrumento como "Sup/Res"
+    icon = 'indicators:ADX',  -- Define um ícone (no caso, o indicador ADX) para o instrumento
+    overlay = true  -- Define que esse indicador deve ser plotado sobre o gráfico de preços existente (overlay)
+}
+---------------------------PARTE 2 ---------------------
+
+local function a()
+    local b = make_series()  -- Cria uma série de dados vazia chamada 'b'
+    local c = high[2]  -- Obtém o valor da alta (high) 2 barras atrás
+
+    if not get_value(c) then
+        return b
+    end
+
+    local d = high <= c and high[1] <= c and high[3] <= c and high[4] <= c  -- Condição lógica
+    b:set(iff(d, c, b[1]))  -- Define o valor de 'b' com base na condição
+    return b
+end;
+
+------------------------PARTE 3 ------------------------------
+
+-- Entrada para o grupo das Linhas de 10 Períodos
+input_group {
+    "Linhas 10 Períodos",
+    period_10_color = input {default = "#0000FF", type = input.color, title = "Cor das Linhas 10"},
+    period_10_width = input {default = 1, type = input.line_width, title = "Largura das Linhas 10"}
+}
+
+-- Entrada para o grupo das Linhas de 30 Períodos
+input_group {
+    "Linhas 30 Períodos",
+    period_30_color = input {default = "#FF0000", type = input.color, title = "Cor das Linhas 30"},
+    period_30_width = input {default = 1, type = input.line_width, title = "Largura das Linhas 30"}
+}
+
+-- Entrada para o grupo das Linhas de 60 Períodos
+input_group {
+    "Linhas 60 Períodos",
+    period_60_color = input {default = "#00FF00", type = input.color, title = "Cor das Linhas 60"},
+    period_60_width = input {default = 1, type = input.line_width, title = "Largura das Linhas 60"}
+}
+
+-- Entrada para o grupo das Linhas de 100 Períodos
+input_group {
+    "Linhas 100 Períodos",
+    period_100_color = input {default = "#FFFF00", type = input.color, title = "Cor das Linhas 100"},
+    period_100_width = input {default = 1, type = input.line_width, title = "Largura das Linhas 100"}
+}
+
+-- Entrada para o grupo das Linhas de 150 Períodos
+input_group {
+    "Linhas 150 Períodos",
+    period_150_color = input {default = "#FFA500", type = input.color, title = "Cor das Linhas 150"},
+    period_150_width = input {default = 1, type = input.line_width, title = "Largura das Linhas 150"}
+}
+
+-- Entrada para o grupo das Linhas de 200 Períodos
+input_group {
+    "Linhas 200 Períodos",
+    period_200_color = input {default = "#800080", type = input.color, title = "Cor das Linhas 200"},
+    period_200_width = input {default = 1, type = input.line_width, title = "Largura das Linhas 200"}
+}
+
+h = a()  -- Chama a função 'a' e atribui o resultado a 'h'
+l = e()  -- Chama a função 'e' e atribui o resultado a 'l'
+
+hline(h, "High", color, high_width)  -- Desenha uma linha horizontal com base no valor 'h'
+hline(l, "Low", color, width)  -- Desenha uma linha horizontal com base no valor 'l'
+
+
+--------------------------- Parte 4----------------------------------------
+
+-- Usando as entradas de usuário para definir cores e larguras dinamicamente
+
+hline(highest(10)[1], "HH10", period_10_color, period_10_width)  -- Linha com cor e largura definidas pelo usuário para o maior valor das últimas 10 barras
+hline(lowest(10)[1], "LL10", period_10_color, period_10_width)  -- Linha com cor e largura definidas pelo usuário para o menor valor das últimas 10 barras
+
+hline(highest(30)[1], "HH30", period_30_color, period_30_width)  -- Linha com cor e largura definidas pelo usuário para o maior valor das últimas 30 barras
+hline(lowest(30)[1], "LL30", period_30_color, period_30_width)  -- Linha com cor e largura definidas pelo usuário para o menor valor das últimas 30 barras
+
+hline(highest(60)[1], "HH60", period_60_color, period_60_width)  -- Linha com cor e largura definidas pelo usuário para o maior valor das últimas 60 barras
+hline(lowest(60)[1], "LL60", period_60_color, period_60_width)  -- Linha com cor e largura definidas pelo usuário para o menor valor das últimas 60 barras
+
+hline(highest(100)[1], "HH100", period_100_color, period_100_width)  -- Linha com cor e largura definidas pelo usuário para o maior valor das últimas 100 barras
+hline(lowest(100)[1], "LL100", period_100_color, period_100_width)  -- Linha com cor e largura definidas pelo usuário para o menor valor das últimas 100 barras
+
+hline(highest(150)[1], "HH150", period_150_color, period_150_width)  -- Linha com cor e largura definidas pelo usuário para o maior valor das últimas 150 barras
+hline(lowest(150)[1], "LL150", period_150_color, period_150_width)  -- Linha com cor e largura definidas pelo usuário para o menor valor das últimas 150 barras
+
+hline(highest(200)[1], "HH200", period_200_color, period_200_width)  -- Linha com cor e largura definidas pelo usuário para o maior valor das últimas 200 barras
+hline(lowest(200)[1], "LL200", period_200_color, period_200_width)  -- Linha com cor e largura definidas pelo usuário para o menor valor das últimas 200 barras
