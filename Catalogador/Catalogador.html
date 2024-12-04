@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Catalogador</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+        }
+        .catalog {
+            margin-top: 20px;
+        }
+        .item {
+            margin-bottom: 10px;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+        th, td {
+            border: 1px solid #ddd;
+            padding: 8px;
+            text-align: left;
+        }
+        th {
+            background-color: #f2f2f2;
+        }
+        .red-cell {
+            background-color: red;
+            color: white;
+        }
+        .green-cell {
+            background-color: green;
+            color: white;
+        }
+        .menu {
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            text-align: right;
+        }
+        .menu a {
+            margin-left: 10px;
+            text-decoration: none;
+            color: #000;
+        }
+        .qr-code {
+            text-align: center;
+            margin-top: 20px;
+        }
+        .qr-code img {
+            width: 150px;
+            height: 150px;
+        }
+    </style>
+</head>
+<body>
+    <div class="menu">
+        <a href="https://www.instagram.com" target="_blank">Nossa Biblioteca</a>
+        <a href="https://www.instagram.com" target="_blank">Instagram</a>
+        <a href="https://www.youtube.com" target="_blank">YouTube</a>
+        <a href="https://www.facebook.com" target="_blank">Facebook</a>
+        <a href="https://www.tiktok.com" target="_blank">TikTok</a>
+        <div class="qr-code">
+            <p>Colabore com um valor</p>
+            <img src="qrcode.png" alt="QR Code">
+        </div>
+    </div>
+    <h1>Catalogador</h1>
+    <form id="catalogForm">
+        <label for="inputFile">Arquivo CSV:</label>
+        <input type="file" id="inputFile" accept=".csv" required>
+        <button type="submit">Adicionar</button>
+    </form>
+    <div>
+        <label for="filter">Filtro:</label>
+        <select id="filter">
+            <option value="10">Últimos 10 dias</option>
+            <option value="15">Últimos 15 dias</option>
+            <option value="30">Últimos 30 dias</option>
+        </select>
+    </div>
+    <div>
+        <label for="percentageFilter">Filtro de Porcentagem:</label>
+        <select id="percentageFilter">
+            <option value="0">Todos</option>
+            <option value="50">Maior que 50%</option>
+            <option value="75">Maior que 75%</option>
+            <option value="90">Maior que 90%</option>
+        </select>
+    </div>
+    <div class="catalog" id="catalog"></div>
+
+    <script src="script.js"></script>
+</body>
+</html>
